@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explorez une salle de datacenter et une baie 42U à configuration aléatoire.">
+  <title>Salle datacenter</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0b1120; color: #e8f0ff; font: 16px system-ui, sans-serif; }
+    canvas { display: block; width: 100vw; height: 100dvh; }
+    .panel { position: fixed; top: 1rem; left: 1rem; max-width: calc(100vw - 2rem); padding: 1rem 1.25rem;
+      background: #101a2dea; border: 1px solid #30425d; border-radius: 1rem; }
+    h1 { margin: 0 0 .75rem; font-size: 1.25rem; }
+    p { margin: .55rem 0; }
+    kbd { padding: .1em .4em; border: 1px solid #516784; border-radius: .3em; color: #aeefff; }
+    button { margin-top: .65rem; padding: .55rem .8rem; border: 0; border-radius: .5rem;
+      background: #9eeaff; color: #101a2d; font: inherit; font-weight: 650; cursor: pointer; }
+    #status { color: #c4d4ec; font-size: .9rem; }
+    #aim { position: fixed; inset: 50% auto auto 50%; transform: translate(-50%, -50%);
+      width: 12px; height: 12px; border: 1px solid #fff; border-radius: 50%; pointer-events: none;
+      box-shadow: 0 0 3px #000; }
+  </style>
+</head>
+<body>
+  <canvas id="scene" aria-label="Salle de datacenter et baie 42U en trois dimensions"></canvas>
+  <span id="aim" aria-hidden="true" hidden></span>
+  <section class="panel" aria-label="Commandes">
+    <h1>Salle datacenter</h1>
+    <p><kbd>Z</kbd> Avancer · <kbd>X</kbd> Reculer</p>
+    <p><kbd>Q</kbd> Gauche · <kbd>D</kbd> Droite</p>
+    <p><kbd>↑</kbd> Monter · <kbd>↓</kbd> Descendre</p>
+    <p>Cliquez sur une poignée, puis maintenez-la<br>en reculant avec <kbd>X</kbd> ou en tirant vers le bas.<br>Relâchez une fois l’équipement sorti.</p>
+    <button type="button" id="start">Activer la souris</button>
+    <button type="button" id="door" disabled>Ouvrir la porte</button>
+    <p id="status" role="status">Cliquez sur la porte pour l’ouvrir ou la fermer.</p>
+  </section>
+  <script src="scene.bundle.js" defer></script>
+</body>
+</html>

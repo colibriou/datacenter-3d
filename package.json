@@ -1,0 +1,15 @@
+{
+  "name": "baie-datacenter-webgl",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild scene.js --bundle --minify --loader:.glb=binary --outfile=scene.bundle.js --legal-comments=inline"
+  },
+  "dependencies": {
+    "cannon-es": "0.20.0",
+    "three": "0.183.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}
